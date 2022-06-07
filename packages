@@ -1,0 +1,42 @@
+base
+base-devel
+linux-lts
+grub
+  efibootmgr
+bash
+  bash-completion
+man-db
+man-pages
+texinfo
+curl
+gnupg
+  gtk2
+openssh
+git
+ruby
+ruby-irb
+ruby-rdoc
+ruby-docs
+rubygems
+tk
+nodejs
+npm
+yarn
+docker
+docker-compose
+neovim
+xorg-server
+lightdm
+lightdm-gtk-greeter
+openbox
+obconf
+kitty
+firefox
+  hunspell-en_us
+  geckodriver
+chromium
+ttf-dejavu
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra

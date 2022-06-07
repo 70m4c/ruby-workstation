@@ -1,0 +1,9 @@
+# This is a mirrorlist file appropriate for someone in Chicago, USA. Use the
+# Pacman Mirrorlist Generator (https://archlinux.org/mirrorlist/) to create your
+# own mirrorlist and replace the contents of this file before installing Arch
+# Linux.
+
+Server = http://mirrors.gigenet.com/archlinux/$repo/os/$arch
+Server = http://ftp.osuosl.org/pub/archlinux/$repo/os/$arch
+Server = http://repo.miserver.it.umich.edu/archlinux/$repo/os/$arch
+Server = http://mirrors.liquidweb.com/archlinux/$repo/os/$arch
