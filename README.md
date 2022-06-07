@@ -2,6 +2,28 @@
 
 Ruby Workstation is an [Arch Linux](https://archlinux.org) installation script that creates a development environment for [Ruby](https://www.ruby-lang.org).
 
+## Usage
+
+The following steps will install Ruby Workstation.
+
+1. Boot a recent Arch Linux installation image.
+
+2. Retrieve the contents of this repository using the following command.
+
+```sh
+curl -sSL https://github.com/70m4c/ruby-workstation/archive/refs/heads/master.tar.gz | tar xz --strip-components=1
+```
+
+3. Customize the `install.sh`, `packages`, `mirrorlist` and other files to suit your needs.
+
+4. Run the installation script.
+
+```sh
+bash install.sh
+```
+
+5. Reboot.
+
 ## Copyright & License
 
 Copyright ©2022 Томас
