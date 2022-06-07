@@ -1,5 +1,7 @@
 # Ruby Workstation
 
+Ruby Workstation is an [Arch Linux](https://archlinux.org) installation script that creates a development environment for [Ruby](https://www.ruby-lang.org).
+
 ## Copyright & License
 
 Copyright ©2022 Томас
