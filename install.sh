@@ -163,6 +163,11 @@ printf "%s\n%s" "${USER_PASSWORD}" "${USER_PASSWORD}" | arch-chroot /mnt passwd 
 echo "Enable wheel group to perform sudo commands"
 echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
 
+# Copy files to new system
+echo "Copying files to the new system"
+cp -rf ./files/etc/. /mnt/etc
+cp -rf ./files/home/user/. /mnt/home/${USERNAME}
+
 # Generate fstab
 echo "Generating fstab file from mounted devices and placing in /mnt/etc/fstab"
 genfstab -U /mnt >> /mnt/etc/fstab
