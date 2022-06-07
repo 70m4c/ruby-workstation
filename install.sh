@@ -163,7 +163,7 @@ echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
 echo "Copying files to the new system"
 cp -rf ./files/etc/. /mnt/etc
 cp -rf ./files/home/user/. /mnt/home/${USERNAME}
-arch-chroot /mnt chown -R ${USERNAME}:${USERNAME} /mnt/home/${USERNAME}
+arch-chroot /mnt chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
 
 # Generate fstab
 echo "Generating fstab file from mounted devices and placing in /mnt/etc/fstab"
