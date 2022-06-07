@@ -151,6 +151,18 @@ pacman --sync --noconfirm archlinux-keyring
 echo -e "Installing packages to /mnt:\n$(<packages)"
 pacstrap /mnt $(<packages)
 
+# Create user account
+echo "Creating user '${USERNAME}', with additional groups [${ADDL_USERGROUPS}], and shell ${USER_SHELL}"
+arch-chroot /mnt useradd -m -G ${ADDL_USERGROUPS} -s ${USER_SHELL} ${USERNAME}
+
+# Set password
+echo "Setting the user password"
+printf "%s\n%s" "${USER_PASSWORD}" "${USER_PASSWORD}" | arch-chroot /mnt passwd ${USERNAME}
+
+# Enable wheel group to sudo
+echo "Enable wheel group to perform sudo commands"
+echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
+
 # Generate fstab
 echo "Generating fstab file from mounted devices and placing in /mnt/etc/fstab"
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -219,18 +231,6 @@ echo "Adding 70m4c repo"
   echo "Server = http://mirror.70m4c.su/70m4c/aur-repo/\$arch"
   echo "SigLevel = Optional TrustAll"
 } >> /mnt/etc/pacman.conf
-
-# Create user account
-echo "Creating user '${USERNAME}', with additional groups [${ADDL_USERGROUPS}], and shell ${USER_SHELL}"
-arch-chroot /mnt useradd -m -G ${ADDL_USERGROUPS} -s ${USER_SHELL} ${USERNAME}
-
-# Set password
-echo "Setting the user password"
-printf "%s\n%s" "${USER_PASSWORD}" "${USER_PASSWORD}" | arch-chroot /mnt passwd ${USERNAME}
-
-# Enable wheel group to sudo
-echo "Enable wheel group to perform sudo commands"
-echo "%wheel ALL=(ALL:ALL) ALL" > /mnt/etc/sudoers.d/wheel
 
 # Configure GRUB boot loader
 echo "Install GRUB"
