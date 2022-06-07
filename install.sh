@@ -38,8 +38,6 @@ HOSTNAME="ruby-dev"
 IP_ADDRESS="127.0.1.1"
 LOCALE="en_US.UTF-8"
 TIMEZONE="America/Chicago"
-NTP_SERVERS="time1.facebook.com time2.facebook.com time3.facebook.com time4.facebook.com time5.facebook.com"
-NTP_FALLBACK_SERVERS="time1.google.com time2.google.com time3.google.com time4.google.com"
 SERVICES="systemd-networkd systemd-resolved systemd-timesyncd lightdm docker"
 
 # END OF VARIABLES SECTION
@@ -65,8 +63,6 @@ echo "HOSTNAME: ${HOSTNAME}"
 echo "IP_ADDRESS: ${IP_ADDRESS}"
 echo "LOCALE: ${LOCALE}"
 echo "TIMEZONE: ${TIMEZONE}"
-echo "NTP_SERVERS: ${NTP_SERVERS}"
-echo "NTP_FALLBACK_SERVERS: ${NTP_FALLBACK_SERVERS}"
 echo "SERVICES: ${SERVICES}"
 echo "--------------------------------------------------------------------------------"
 
@@ -176,12 +172,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # Set the timezone and time server(s)
 echo "Setting the time zone to: ${TIMEZONE}"
 arch-chroot /mnt ln --symbolic --force /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
-
-# NTP Servers
-echo "Set NTP servers to: ${NTP_SERVERS}"
-sed -i "s/#NTP=.*/NTP=${NTP_SERVERS}/" /mnt/etc/systemd/timesyncd.conf
-echo "Set NTP fallback servers to: ${NTP_FALLBACK_SERVERS}"
-sed -i "s/#FallbackNTP=.*/FallbackNTP=${NTP_FALLBACK_SERVERS}/" /mnt/etc/systemd/timesyncd.conf
 
 # Enable time sync
 echo "Enable and start systemd-timesyncd"
