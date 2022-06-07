@@ -1,6 +1,7 @@
 base
 base-devel
 linux-lts
+virtualbox-guest-utils
 grub
   efibootmgr
 bash
