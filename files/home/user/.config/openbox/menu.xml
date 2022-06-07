@@ -9,19 +9,19 @@
       </item>
       <item label="Firefox">
         <action name="Execute">
-          <execute>firefox</execute>
+          <execute>/usr/lib/firefox/firefox %u</execute>
         </action>
       </item>
       <item label="Chromium">
         <action name="Execute">
-          <execute>chromium</execute>
+          <execute>/usr/bin/chromium %U</execute>
         </action>
       </item>
     </menu>
     <menu id="11" label="Settings">
       <item label="Openbox Configuration Manager">
         <action name="Execute">
-          <execute>obconf</execute>
+          <execute>obconf %f</execute>
         </action>
       </item>
       <item label="Reconfigure">
