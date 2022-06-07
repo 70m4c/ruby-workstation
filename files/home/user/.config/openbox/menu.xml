@@ -7,6 +7,11 @@
           <execute>kitty</execute>
         </action>
       </item>
+      <item label="RubyMine">
+        <action name="Execute">
+          <execute>/usr/bin/jetbrains-rubymine</execute>
+        </action>
+      </item>
       <item label="Firefox">
         <action name="Execute">
           <execute>/usr/lib/firefox/firefox %u</execute>
