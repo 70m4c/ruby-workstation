@@ -14,11 +14,15 @@ gnupg
   gtk2
 openssh
 git
+rubymine
 ruby
+chruby
+ruby-install
 ruby-irb
+rubygems
+cinc
 ruby-rdoc
 ruby-docs
-rubygems
 tk
 nodejs
 npm
