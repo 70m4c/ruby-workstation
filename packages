@@ -20,7 +20,7 @@ chruby
 ruby-install
 ruby-irb
 rubygems
-cinc
+cinc-workstation-bin
 ruby-rdoc
 ruby-docs
 tk
