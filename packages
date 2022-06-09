@@ -32,7 +32,7 @@ lightdm-gtk-greeter
 openbox
 obconf
 kitty
-librewolf
+librewolf-bin
   hunspell-en_us
   geckodriver
 ttf-dejavu
