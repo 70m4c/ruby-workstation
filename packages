@@ -32,10 +32,9 @@ lightdm-gtk-greeter
 openbox
 obconf
 kitty
-firefox
+librewolf
   hunspell-en_us
   geckodriver
-chromium
 ttf-dejavu
 noto-fonts
 noto-fonts-cjk
